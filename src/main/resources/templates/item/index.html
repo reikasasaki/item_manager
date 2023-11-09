@@ -5,6 +5,37 @@
 <title>商品一覧表示</title>
 </head>
 <body>
-	<h1>商品一覧表示</h1>
+	<h1>商品一覧表示ページ</h1>
+	<div>
+		<a href="/item/toroku">新規登録</a>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>商品名</th>
+				<th>価格</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="item : ${items}">
+				<td th:text="${item.id}"></td>
+				<td th:text="${item.name}"></td>
+				<td th:text="${item.price}"></td>
+				<td>
+					<form th:action="@{/item/henshu/{id}(id=${item.id})}" method="get">
+						<input type="submit" value="編集">
+					</form>
+				</td>
+				<td>
+					<form th:action="@{/item/sakujo/{id}(id=${item.id})}" method="post">
+						<input type="submit" value="削除">
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>

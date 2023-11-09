@@ -6,5 +6,25 @@
 </head>
 <body>
 	<h1>商品編集ページ</h1>
+	<form th:action="@{/item/henshu/{id}(id=${id})}" th:object="${itemForm}" method="post">
+		<div>
+			<label>商品名</label>
+		</div>
+		<div>
+			<input type="text" th:field="*{name}" placeholder="商品名を入力してください">
+		</div>
+		<div>
+			<label>価格</label>
+		</div>
+		<div>
+			<input type="number" th:field="*{price}" placeholder="価格を入力してください">
+		</div>
+		<div>
+			<input type="submit" name="send" value="登録する">
+		</div>
+		<div>
+			<a href="/item">戻る</a>
+		</div>
+	</form>
 </body>
 </html>
