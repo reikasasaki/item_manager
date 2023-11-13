@@ -15,7 +15,9 @@
 				<th>id</th>
 				<th>商品名</th>
 				<th>価格</th>
+				<th>在庫数</th>
 				<th>カテゴリ</th>
+				<th></th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -25,7 +27,15 @@
 				<td th:text="${item.id}"></td>
 				<td th:text="${item.name}"></td>
 				<td th:text="${item.price}"></td>
+				<td th:text="${item.stock}"></td>
 				<td th:text="${item.category.name}"></td>
+				<td>
+					<form th:action="@{/item/stock/{id}(id=${item.id})}" method="post">
+						<input type="number" name="stock">
+						<input type="submit" name="in" value="入荷">
+						<input type="submit" name="out" value="出荷">
+					</form>
+				</td>
 				<td>
 					<form th:action="@{/item/henshu/{id}(id=${item.id})}" method="get">
 						<input type="submit" value="編集">
