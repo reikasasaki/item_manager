@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+   th:replace="~{layout/base :: layout(~{::title},~{},~{::body//content()})}">
 <head>
 <meta charset="UTF-8">
 <title>商品新規登録ページ</title>

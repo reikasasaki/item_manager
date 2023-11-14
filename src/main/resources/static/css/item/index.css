@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+:root{
+	--thead-color: #08FFC8;
+}
+
+.contents h1{
+	margin: 30px 50px;
+}
+
+.tbl{
+	margin: 0 auto;
+	width: 85%;
+	background-color: white;
+	border-spacing: 0;
+}
+
+.tbl thead{
+	background-color: var(--thead-color);
+}
+
+.tbl-form{
+	width: 50%;
+}
+
+.tbl-stock-btn{
+	width: 20%;
+}
+
+.tbl-stock{
+	width: 30%;
+}
+
+.tbl-btn{
+	width: 100%;
+}
