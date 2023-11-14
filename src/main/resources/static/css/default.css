@@ -1,0 +1,54 @@
+@charset "UTF-8";
+:root{
+	--header-color: #DADADA;
+	--menu-color: #204969;
+}
+
+body{
+	height: 100vh;
+	margin: 0;
+}
+
+.header{
+	background-color: var(--header-color);
+	min-height: 10%;
+}
+
+.header h1{
+	margin: 0;
+}
+
+.main{
+	display: flex;
+	height: 90%;
+}
+
+.side-menu{
+	width: 20%;
+}
+
+.contents{
+	width: 80%;
+}
+
+.menu-list{
+	background-color: var(--menu-color);
+	border-style: none;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu-list a{
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.menu-list li{
+	margin: 20px 0;
+	padding: 0 10px;
+}

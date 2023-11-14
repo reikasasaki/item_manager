@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+   th:replace="~{layout/base :: layout(~{::title},~{::link},~{::body/content()})}">
 <head>
 <meta charset="UTF-8">
 <title>商品一覧表示</title>
+<link rel="stylesheet" href="/css/item/index.css">
 </head>
 <body>
 	<h1>商品一覧表示ページ</h1>
-	<div>
-		<a href="/item/toroku">新規登録</a>
-	</div>
-	<table>
+	<table class="tbl">
 		<thead>
 			<tr>
 				<th>id</th>
@@ -17,7 +16,7 @@
 				<th>価格</th>
 				<th>在庫数</th>
 				<th>カテゴリ</th>
-				<th></th>
+				<th class="tbl-stock"></th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -31,19 +30,19 @@
 				<td th:text="${item.category.name}"></td>
 				<td>
 					<form th:action="@{/item/stock/{id}(id=${item.id})}" method="post">
-						<input type="number" name="stock">
-						<input type="submit" name="in" value="入荷">
-						<input type="submit" name="out" value="出荷">
+						<input class="tbl-form" type="number" name="stock">
+						<input class="tbl-stock-btn" type="submit" name="in" value="入荷">
+						<input class="tbl-stock-btn" type="submit" name="out" value="出荷">
 					</form>
 				</td>
 				<td>
 					<form th:action="@{/item/henshu/{id}(id=${item.id})}" method="get">
-						<input type="submit" value="編集">
+						<input class="tbl-btn" type="submit" value="編集">
 					</form>
 				</td>
 				<td>
 					<form th:action="@{/item/sakujo/{id}(id=${item.id})}" method="post">
-						<input type="submit" value="削除">
+						<input class="tbl-btn" type="submit" value="削除">
 					</form>
 				</td>
 			</tr>
